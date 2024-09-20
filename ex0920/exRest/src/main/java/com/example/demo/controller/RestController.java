@@ -17,7 +17,7 @@ public class RestController {
 	@ResponseBody
 	public String getMember() {
 		
-		return "memberText";
+		return "<h1>memberText</h1>";
 	}
 	
 	// 전송1. /member/m1?name="홍길동" 파라메터name필수
