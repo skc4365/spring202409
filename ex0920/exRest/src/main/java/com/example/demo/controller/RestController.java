@@ -12,6 +12,7 @@ import com.example.demo.obj.Member;
 @RequestMapping("/member")
 public class RestController {
 
+	// 기본경로. /member/m1
 	@GetMapping("/m0")
 	@ResponseBody
 	public String getMember() {
@@ -19,7 +20,7 @@ public class RestController {
 		return "memberText";
 	}
 	
-	// 전송1. /m1?name="홍길동" 파라메터name필수
+	// 전송1. /member/m1?name="홍길동" 파라메터name필수
 	@GetMapping("/m1")
 	@ResponseBody
 	public String getMemberName(@RequestParam("name") String name) {
@@ -28,7 +29,7 @@ public class RestController {
 		return result;
 	}
 	
-	// 전송2. /m2?name="홍길동"&age="22" 파라메터age선택
+	// 전송2. /member/m2?name="홍길동"&age="22" 파라메터age선택
 	@GetMapping("/m2")
 	@ResponseBody
 	public String getMemberNameAge(
@@ -39,7 +40,7 @@ public class RestController {
 		return result;
 	}
 	
-	// 전송 객체. /m3?name="홍길동"&age=33 파라메터name,age필수
+	// 전송 객체. /member/m3?name="홍길동"&age=33 파라메터name,age필수
 	@GetMapping("/m3")
 	@ResponseBody
 	public Member getMemberObj(
