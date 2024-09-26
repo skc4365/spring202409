@@ -20,11 +20,14 @@ public class QuizApplication {
 	QuizRepository repository;
 
 	private void execute() {
+		
+		System.out.println("test");
+		
 		// 자료입력
 		// setup();
 
 		// 자료 전체 출력
-		showList();
+		//showList();
 
 		// 1건 취득
 		// showOne();
@@ -39,7 +42,6 @@ public class QuizApplication {
 
 	private void deleteQuiz() {
 		System.out.println("----------삭제 처리 start-----");
-		// Id가 14인 레코드 삭제
 		// repository.deleteById(14);
 		System.out.println("----------삭제 처리 start-----");
 	}
