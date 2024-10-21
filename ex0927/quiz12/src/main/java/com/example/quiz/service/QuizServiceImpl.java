@@ -28,9 +28,17 @@ public class QuizServiceImpl implements QuizService {
 
     @Override
     public Optional<Quiz> selectOneRandomQuiz() {
+    	
         // 랜덤으로 id 값을 가져오기
         Integer randId = repository.getRandomId();
 
+
+		/*
+		 * 기본자료형(int, char, double)은 null값을 가질 수 없다.
+		 * 
+		 * Integer(wrapper class)는 값을 없는 상태, null이라할 수 있다.
+		 */
+        
         // 퀴즈가 없는 경우
         if (randId == null) {
             // 빈 Optional 인스턴스를 반환

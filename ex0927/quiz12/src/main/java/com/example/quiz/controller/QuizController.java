@@ -22,6 +22,7 @@ import com.example.quiz.service.QuizService;
 @Controller
 @RequestMapping("/quiz")
 public class QuizController {
+	
     /** DI 대상 */
     @Autowired
     QuizService service;
@@ -104,6 +105,7 @@ public class QuizController {
             BindingResult result,
             Model model,
             RedirectAttributes redirectAttributes) {
+    	
         //QuizForm에서 Quiz으로 채우기
         Quiz quiz = makeQuiz(quizForm);
 
