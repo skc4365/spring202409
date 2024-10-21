@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 수정</title>
+</head>
+<body>
+	<form th:action="@{|/update/${member.custno}|}" method="post"
+		name="updateForm">
+		<input type="hidden" name="custno" th:value="${member.custno}">
+		회원이름: <input type="text" name="custname" th:value="${member.custname}"><br>
+		회원전화: <input type="text" name="phone" th:value="${member.phone}"><br>
+		회원주소: <input type="text" name="address" th:value="${member.address}"><br>
+		가입날짜: <input type="date" name="joindate" th:value="${member.joindate}"><br>
+		회원등급: <input type="text" name="grade" th:value="${member.grade}"><br>
+		도시코드: <input type="text" name="city" th:value="${member.city}"><br>
+		<input type="button" value="수정" onclick="submit()">
+	</form>
+	<script th:inline="javascript">
+    const frmUpdate = () => {
+    	
+    	// 값 validate
+            updateForm.submit();
+        
+    }
+</script>
+</body>
+</html>

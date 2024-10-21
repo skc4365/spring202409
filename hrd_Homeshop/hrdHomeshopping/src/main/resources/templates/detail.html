@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 정보 보기</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>회원번호</th>
+        <td th:text="${member.custno}"></td>
+    </tr>
+    <tr>
+        <th>회원이름</th>
+        <td th:text="${member.custname}"></td>
+    </tr>
+    <tr>
+        <th>회원전화</th>
+        <td th:text="${member.phone}"></td>
+    </tr>
+    <tr>
+        <th>회원주소</th>
+        <td th:text="${member.address}"></td>
+    </tr>
+    <tr>
+        <th>가입날짜</th>
+        <td th:text="${member.joindate}"></td>
+    </tr>
+    <tr>
+        <th>회원등급</th>
+        <td th:text="${member.grade}"></td>
+    </tr>
+    <tr>
+        <th>도시코드</th>
+        <td th:text="${member.city}"></td>
+    </tr>
+    
+</table>
+<button onclick="listReq()">목록</button>
+<button onclick="updateReq()">수정</button>
+<button onclick="deleteReq()">삭제</button>
+</body>
+<script th:inline="javascript">
+    const listReq = () => {
+        location.href = "/list";
+    }
+    const updateReq = () => {
+        location.href = `/update/[[${member.custno}]]`;
+    }
+    const deleteReq = () => {
+        location.href = `/delete/[[${member.custno}]]`;
+    }
+</script>
+</html>

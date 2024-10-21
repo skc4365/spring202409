@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>회원 조회</title>
+<style>
+table, tr, td, th {
+	border: 1px solid green;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+	<a href="/save">멤버저장</a>
+	<table>
+		<tr>
+			<th>회원번호</th>
+			<th>회원이름</th>
+			<th>회원전화</th>
+			<th>회원주소</th>
+			<th>가입일자</th>
+			<th>회원등급</th>
+			<th>도시코드</th>
+		</tr>
+		<tr th:each="member: ${memberList}">
+			<td th:text="${member.custno}"></td>
+			<td><a th:text="${member.custname}"
+				th:href="@{|/${member.custno}|}"></a></td>
+			<td th:text="${member.phone}"></td>
+			<td th:text="${member.address}"></td>
+			<td th:text="${member.joindate}"></td>
+			<td th:text="${member.grade}"></td>
+			<td th:text="${member.city}"></td>
+
+		</tr>
+	</table>
+</body>
+</html>
