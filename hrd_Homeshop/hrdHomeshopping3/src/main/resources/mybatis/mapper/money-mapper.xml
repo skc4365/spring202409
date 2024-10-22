@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Money">
+
+	<select id="findAll" resultType="money">
+		SELECT A.custno as custno, A.custname as custname, 
+			case
+				when grade='A' then 'VIP'
+				when grade='B' then '일반'
+				when grade='C' then '직원'
+				ELSE '기타' 
+			END AS grade,
+			SUM(price) as price
+		FROM membertbl A, moneytbl B
+		WHERE A.custno = B.custno
+		GROUP BY A.custno, A.custname, A.grade
+		ORDER BY price DESC
+    </select>
+    
+</mapper>

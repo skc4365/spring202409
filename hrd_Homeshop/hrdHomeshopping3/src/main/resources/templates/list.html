@@ -1,0 +1,24 @@
+<list>
+<table>
+	<tr>
+		<th>회원번호</th>
+		<th>회원이름</th>
+		<th>회원전화</th>
+		<th>회원주소</th>
+		<th>가입일자</th>
+		<th>회원등급</th>
+		<th>도시코드</th>
+	</tr>
+	<tr th:each="member: ${memberList}">
+		<td><a th:text="${member.custno}"
+			th:href="@{|/${member.custno}|}"></a></td>
+		<td th:text="${member.custname}">></td>
+		<td th:text="${member.phone}"></td>
+		<td th:text="${member.address}"></td>
+		<td th:text="${member.joindate}"></td>
+		<td th:text="${member.grade}"></td>
+		<td th:text="${member.city}"></td>
+
+	</tr>
+</table>
+</list>

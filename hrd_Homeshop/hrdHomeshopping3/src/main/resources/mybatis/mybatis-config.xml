@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 순서3. 마이바티스 컨피그 설정 -->
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.skc.dto.MemberDTO" alias="member"></typeAlias>
+        <typeAlias type="com.skc.dto.MoneyDTO" alias="money"></typeAlias>
+    </typeAliases>
+</configuration>
