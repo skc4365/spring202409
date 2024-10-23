@@ -1,0 +1,27 @@
+-----< HowTo use 로그백Logback >-----
+
+Lombok에서 제공하는 @Slf4j설명:
+     jdkLogging, logback, log4j2등의 로깅프레임웍을 사용할 수 있다.
+     
+-------------------------------------------------------------
+
+1. 툴Tool에 로그출력 설정
+	설정 -> javaCompiler -> annotation... -> [체크]enable annotation processing.
+
+2. main에 설정 : @Slf4j
+
+3. application.properties 설정 :
+     #로그 설정
+     logging.config=classpath:config/logback.xml
+     
+4. logback.xml 구현 : 
+     콘솔에 출력될 로그의 Level과 format, Mybatis설정.
+
+5. mybatis-config.xml에 로깅 설정:
+     mybatis에 로깅연결하여...
+     
+-------------------------------------------------------------
+
+-- favicon 워닝에러 수정 : html <link... 참고
+
+-- Thymleaf 워닝에러 수정 : html "~{./header :: header}" 참고
