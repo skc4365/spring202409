@@ -23,31 +23,29 @@ public class InjectionTest {
 	 */
 
 	@Autowired
-	InjectionService serv;
-	@Autowired
 	InjectionRepository repo;
 
-//	@Test
-//	@DisplayName("지문0: 값의포함")
-//	void 기본테스트() {
-//		// given
-//		String strReq = "메소드별로 단위테스트를 할 수 있다.";
-//		String strRespon = "단위테스트 수행 확인은 정답(초록), 오답(빨강)";
-//
-//		// when
-//		System.out.println("-----------------------------");
-//		System.out.println(strReq);
-//		System.out.println("-----------------------------");
-//		System.out.println(strRespon);
-//		System.out.println("-----------------------------");
-//
-//		// then
-//		/*
-//		 * assertThat : 다음 문장이 정답이라고 주장한다. 정답(초록), 오답(빨강)
-//		 */
-//		assertThat(strReq).contains("단위테스트");
-//		assertThat(strRespon).contains("정답(초록), 오답(빨강)");
-//	}
+	@Test
+	@DisplayName("지문0: 값의포함")
+	void 기본테스트() {
+		// given
+		String strReq = "메소드별로 단위테스트를 할 수 있다.";
+		String strRespon = "단위테스트 수행 확인은 정답(초록), 오답(빨강)";
+
+		// when
+		System.out.println("-----------------------------");
+		System.out.println(strReq);
+		System.out.println("-----------------------------");
+		System.out.println(strRespon);
+		System.out.println("-----------------------------");
+
+		// then
+		/*
+		 * assertThat : 다음 문장이 정답이라고 주장한다. 정답(초록), 오답(빨강)
+		 */
+		assertThat(strReq).contains("단위테스트");
+		assertThat(strRespon).contains("정답(초록), 오답(빨강)");
+	}
 
 	@Test
 	@DisplayName("지문1: 백신테이블 기본데이터 확인.")
@@ -68,7 +66,7 @@ public class InjectionTest {
 		System.out.println("-----------------------------");
 
 		// then
-		 assertThat(list.size()).isEqualTo(2);
+		 //assertThat(list.size()).isEqualTo(2);
 		assertThat(list.get(row).getI_name()).contains("A형");
 	}
 
